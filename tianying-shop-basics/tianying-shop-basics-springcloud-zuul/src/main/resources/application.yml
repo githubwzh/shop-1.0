@@ -1,0 +1,27 @@
+###服务启动端口号
+server:
+  port: 80
+###服务名称(服务注册到eureka名称)  
+spring:
+    application:
+        name: app-tianying-zuul
+###服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+           defaultZone: http://10.6.105.185:8080/eureka
+
+
+### 配置网关反向代理    
+zuul:
+  routes:
+    api-a:
+     ### 以 /api-weixin/访问转发到会员服务
+      path: /api-weixin/**
+      service-id: app-tianying-weixin
+    api-b:
+        ### 以 /api-member/访问转发到订单服务
+      path: /api-member/**
+      service-id: app-tianying-member
+
+

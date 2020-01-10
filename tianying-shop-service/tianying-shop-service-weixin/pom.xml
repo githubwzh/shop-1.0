@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.tianying</groupId>
+		<artifactId>tianying-shop-service</artifactId>
+		<version>0.0.1-RELEASE</version>
+	</parent>
+	<artifactId>tianying-shop-service-weixin</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>com.tianying</groupId>
+			<artifactId>tianying-shop-service-api-weixin</artifactId>
+			<version>0.0.1-RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.tianying</groupId>
+			<artifactId>tianying-shop-service-api-member</artifactId>
+			<version>0.0.1-RELEASE</version>
+		</dependency>
+
+		
+		<dependency>
+			<groupId>com.github.binarywang</groupId>
+			<artifactId>weixin-java-mp</artifactId>
+			<version>3.3.8.B</version>
+ 			<exclusions>
+				<exclusion>
+					<artifactId>xstream</artifactId>
+					<groupId>com.thoughtworks.xstream</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+	</dependencies>
+</project>

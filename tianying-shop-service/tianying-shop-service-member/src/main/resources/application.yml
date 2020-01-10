@@ -1,0 +1,56 @@
+
+###服务启动端口号
+server:
+  port: 8300
+
+
+###服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+           defaultZone: http://10.6.105.185:8080/eureka
+
+###因为该应用为注册中心，不会注册自己
+    register-with-eureka: true
+###是否需要从eureka上获取注册信息
+    fetch-registry: true
+    
+###服务名称(服务注册到eureka名称)  
+spring:
+  application:
+    name: app-tianying-member
+  redis:
+    host: 10.6.24.249
+    password: wmsrfredis
+    port: 6379
+    pool:
+      max-idle: 100
+      min-idle: 1
+      max-active: 1000
+      max-wait: -1        
+###数据库相关连接      
+  datasource:
+    username: wmstest
+    password: wmstest
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.6.86.36:3306/meite_member  
+
+
+
+###swagger相关配置
+swagger:
+  base-package: com.tianying.member.service
+  title: SpringCloud2.x构建微服务电商项目-微信服务接口
+  description: 该项目“基于SpringCloud2.x构建微服务电商项目”由每特教育|蚂蚁课堂版权所有，未经过允许的情况下，私自分享视频和源码属于违法行为。
+  version: 1.1
+  terms-of-service-url: www.tianying.com
+  contact:
+    name: 97后互联网架构师-余胜军
+    email: 644064779@qq.com
+
+####打印MyBatias日志    
+logging:
+  level:
+  ### 开发环境使用DEBUG 生产环境info或者error
+   com.tianying.member.mapper: DEBUG
+
